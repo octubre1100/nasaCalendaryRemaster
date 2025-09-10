@@ -88,7 +88,7 @@ img {
   }
 }
 
-/* ====== FLATPICKR CUSTOM DARK THEME ====== */
+
 .flatpickr-calendar {
   background: #161b22 !important;
   border: 1px solid #30363d !important;
@@ -98,7 +98,7 @@ img {
   font-size: 0.95rem;
 }
 
-/* Header (mes/año + botones) */
+
 .flatpickr-months {
   background: #0d1117;
   border-bottom: 1px solid #30363d;
@@ -121,7 +121,7 @@ img {
   color: #2ea043;
 }
 
-/* Días */
+
 .flatpickr-day {
   background: transparent;
   color: #e6edf3;
@@ -134,7 +134,7 @@ img {
   color: white;
 }
 
-/* Día seleccionado */
+
 .flatpickr-day.selected,
 .flatpickr-day.startRange,
 .flatpickr-day.endRange {
@@ -143,13 +143,13 @@ img {
   font-weight: bold;
 }
 
-/* Día de hoy */
+
 .flatpickr-day.today {
   border: 1px solid #58a6ff;
   color: #58a6ff;
 }
 
-/* Días deshabilitados */
+
 .flatpickr-day.disabled,
 .flatpickr-day.prevMonthDay,
 .flatpickr-day.nextMonthDay {
@@ -158,22 +158,22 @@ img {
   cursor: not-allowed;
 }
 
-/* Weekdays header */
+
 span.flatpickr-weekday {
   color: #9ba6b2;
   font-weight: bold;
   font-size: 0.8rem;
 }
 
-/* Input cuando está abierto */
+
 input.flatpickr-input:focus {
   border-color: #58a6ff;
   box-shadow: 0 0 0 4px rgba(88, 166, 255, 0.15);
 }
-/* Botones de navegación del calendario */
+
 .flatpickr-prev-month svg,
 .flatpickr-next-month svg {
-  fill: #58a6ff !important; /* azul visible */
+  fill: #58a6ff !important; 
   width: 18px;
   height: 18px;
   transition: fill 0.2s, background 0.2s;
@@ -181,7 +181,7 @@ input.flatpickr-input:focus {
 
 .flatpickr-prev-month:hover svg,
 .flatpickr-next-month:hover svg {
-  fill: #2ea043 !important; /* verde en hover */
+  fill: #2ea043 !important;
 }
 
 .flatpickr-prev-month,

@@ -15,7 +15,7 @@ const suerteBt = document.getElementById("suerteBt");
 const loader = document.getElementById("loader");
 const fecha = document.getElementById("fecha");
 async function mostrar() {
-  fp.setDate(dateStr, true);
+  const fechaSeleccionada = fp.input.value;
   const url = `https://api.nasa.gov/planetary/apod?api_key=HgVo8m2PE2wuajnKjgLSeNJU6MTQypeRCLJFNMMB&date=${fechaSeleccionada}`;
   try {
     loader.style.display = "block";

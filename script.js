@@ -33,15 +33,18 @@ async function mostrar() {
 
 fecha.addEventListener("change", mostrar);
 function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min); 
-    max = Math.floor(max); 
-    return Math.floor(Math.random() * (max - min + 1)) + min; 
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-suertebt.onclick = function suerte() {
+suertebt.onclick = async function suerte() {
     let today = new Date();
     let randomDate;
     let year, month, day;
+
+    function getRandomIntInclusive(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
     do {
         year = getRandomIntInclusive(1995, 2025);
@@ -66,5 +69,36 @@ suertebt.onclick = function suerte() {
         randomDate = new Date(year, month - 1, day);
     } while (randomDate > today);
 
-   
-}
+    
+    const dateStr = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+
+    const url = `https://api.nasa.gov/planetary/apod?api_key=HgVo8m2PE2wuajnKjgLSeNJU6MTQypeRCLJFNMMB&date=${dateStr}`;
+
+    try {
+        const res = await fetch(url);
+
+        if (!res.ok) {
+            throw new Error(`Error HTTP: ${res.status}`);
+        }
+
+        const datos = await res.json();
+        console.log(datos);
+
+        ttle.textContent = datos.title || "Sin título";
+        explain.textContent = datos.explanation || "Sin explicación";
+        
+        if (datos.media_type === "image") {
+            img.src = datos.url;
+            img.style.display = "block";
+        } else {
+            img.removeAttribute("src");
+            img.style.display = "none";
+        }
+
+    } catch (error) {
+        console.error("Error al obtener datos de la NASA:", error);
+        ttle.textContent = "Error al cargar datos";
+        explain.textContent = "";
+        img.removeAttribute("src");
+    }
+};

@@ -1,25 +1,32 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apod</title>
-</head>
-<style>
-    
-</style>
-<body>
-   <div class="intro">
-       <h1 id="titulopag">En esta pagina vas a poder ver que imagen fue tomada por la NASA en dias determinados</h1>
-       <input type="date" id="fecha" min="1995-06-01">
-       <button id="suertebt">Quiero probar suerte</button>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style></style>
+  <body>
+    <div class="intro">
+      <h1 id="tituloPag">
+        On this site, you can see which photo NASA uploaded on specific days.
+      </h1>
+      <input type="text" id="fecha" placeholder="Selecciona una fecha" />
+      <button id="suerteBt">I am felling lucky</button>
     </div>
-   <div class="nasa">
-    <h3 id="title"></h3>
-    <img id="imgNa" src="" alt="">   
-    <p id="explain"></p>
-   </div>
-</body>
-<script src="script.js"></script>
+    <div class="nasa">
+      <h3 id="title"></h3>
+      <div id="loader" style="display: none"></div>
+      <img id="imgNasa" src="" alt="" />
+      <p id="explain"></p>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="script.js"></script>
 </html>
